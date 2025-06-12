@@ -1,0 +1,80 @@
+<div class="bg-gray-100 dark:bg-gray-800 py-8 min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row -mx-4">
+            <div class="md:flex-1 px-4">
+                <div class="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+                    <img class="w-full h-full object-cover" src="https://image.tmdb.org/t/p/original/{{movieDetails.backdrop_path}}" alt="Product Image">
+                </div>
+                <div class="flex -mx-2 mb-4">
+                    <div class="w-1/2 px-2">
+                        <button class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Watch Now</button>
+                    </div>
+                    <div class="w-1/2 px-2">
+                        <button class="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600" (click)="update()">Watch Later</button>
+                    </div>
+                </div>
+            </div>
+            <div class="md:flex-1 px-4">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                   {{movieDetails.title}}</h2>
+                <div class="flex mb-4">
+                    <div class="mr-4">
+                        <span class="font-bold text-gray-700 dark:text-gray-300">Run Time:</span>
+                        <span class="text-gray-600 dark:text-gray-300">{{movieDetails.runtime}}</span>
+                    </div>
+                  
+                </div>
+                <div class="mb-4">
+                    <span class="font-bold text-gray-700 dark:text-gray-300">Genres</span>
+                    <div class="flex items-center mt-2">
+                        <button *ngFor="let g of movieDetails.genres" class=" p-2 rounded-2xl  bg-gray-400 mr-2">{{g.name}}</button>
+                        
+                    </div>
+                </div>
+             
+                <div>
+                    <span class="font-bold text-gray-700 dark:text-gray-300">Movie Summary:</span>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                       {{movieDetails.overview}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+     <div class="text-2xl text-center font-medium font-serif m-3"><p>Watch More</p></div>
+     <div class="overflow-x-auto scrollbar-none m-4 px-4 ">
+  <div class="flex flex-row space-x-4">
+    <div
+      *ngFor="let m of Pmovies"
+      class="w-80 h-[420px] bg-gray-200 rounded-3xl flex flex-col items-center justify-start text-center p-4 space-y-2 flex-shrink-0"
+    >
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + m.poster_path"
+        alt="{{ m.name }}"
+        class="w-48 h-64 object-cover rounded"
+      />
+      <p class="text-sm font-semibold line-clamp-2">{{ m.title }}</p>
+
+      
+     <div class="flex flex-col text-xs space-y-1">
+<a routerLink="/details/{{m.id}}"><button  class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-medium text-gray-900 rounded-md group bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:text-white dark:focus:ring-blue-800">
+    <span class="relative px-3 py-1.5  rounded group-hover:bg-transparent group-hover:dark:bg-transparent">
+      Details
+    </span>
+  </button></a>
+
+  <button (click)="update()" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-medium text-gray-900 rounded-md group bg-gradient-to-br from-purple-600 to-blue-500 hover:text-white focus:ring-2 focus:outline-none focus:ring-blue-300 dark:text-white dark:focus:ring-blue-800">
+    <span class="relative px-3 py-1.5  rounded group-hover:bg-transparent group-hover:dark:bg-transparent">
+      Add to Watchlist
+    </span>
+  </button>
+</div>
+
+    </div>
+  </div>
+</div>
+</div>

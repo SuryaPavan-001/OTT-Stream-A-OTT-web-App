@@ -1,0 +1,22 @@
+<div class="min-h-screen flex justify-center items-center flex-col bg-gray-100 ">
+  <form class="max-w-sm mx-auto bg-white  p-5 rounded-3xl shadow-md">
+    <div class="mb-5">
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-800">Your email</label>
+      <input type="email" id="email" class="bg-gray-50 border border-gray-300  text-gray-900 dark:text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Email" required />
+    </div>
+    <div class="mb-5">
+      <label for="password" class="block mb-2 text-sm font-medium text-gray-800 ">Your password</label>
+      <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+    </div>
+    <div class="flex items-start mb-5">
+      <input id="terms" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded " required />
+      <label for="terms" class="ml-2 text-sm font-medium text-gray-800 ">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-400">terms and conditions</a></label>
+    </div>
+    <div class="space-x-3">
+      <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
+      <a routerLink="/singup">
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Signup</button>
+      </a>
+    </div>
+  </form>
+</div>
